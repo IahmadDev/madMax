@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import './pages/carwash.dart';
+import './components/appBar.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -134,9 +135,9 @@ class Myapp extends StatelessWidget {
                 },
               ),
               ListTile(
-                title: Text('Item 2'),
+                title: Text('Home'),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/');
                 },
               ),
             ],
