@@ -1,7 +1,17 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import './pages/carwash.dart';
 
 void main() {
-  runApp(Myapp());
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => Myapp(),
+      '/second': (context) => CarWashApp(),
+      // '/third': (context) => ThirdRoute(),
+    },
+  ));
 }
 
 class Myapp extends StatelessWidget {
@@ -13,15 +23,16 @@ class Myapp extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.amber,
           title: const Text(
-            'AppBar Demo',
+            'Mad Max 2',
             style: TextStyle(
               color: Colors.black,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
         body: SafeArea(
           child: Column(
-            //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
                 height: 20.0,
@@ -50,57 +61,83 @@ class Myapp extends StatelessWidget {
                   letterSpacing: 2.5,
                 ),
               ),
+              SizedBox(
+                height: 20.0,
+                child: Divider(
+                  color: Colors.deepPurple.shade100,
+                ),
+              ),
               Card(
                 //padding: EdgeInsets.all(10.0),
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.phone,
-                        size: 20.0,
-                        color: Colors.deepPurple,
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        '0323232342',
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                      )
-                    ],
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    size: 20.0,
+                    color: Colors.deepPurple,
+                  ),
+                  title: Text(
+                    '0323232342',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ),
               Card(
                 //padding: EdgeInsets.all(10.0),
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.email,
-                        size: 20.0,
-                        color: Colors.deepPurple,
-                      ),
-                      SizedBox(
-                        width: 10.0,
-                      ),
-                      Text(
-                        'legaldexter@gmail.com',
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                      )
-                    ],
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    size: 20.0,
+                    color: Colors.deepPurple,
+                  ),
+                  title: Text(
+                    'legaldexter@gmail.com',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
                 ),
+              ),
+            ],
+          ),
+        ),
+        drawer: Drawer(
+          // Add a ListView to the drawer. This ensures the user can scroll
+          // through the options in the drawer if there isn't enough vertical
+          // space to fit everything.
+          child: ListView(
+            // Important: Remove any padding from the ListView.
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                child: Text(
+                  'Drawer Header',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.blue,
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            'https://www.psdvault.com/img/2018/02/mad-max-text-flatten.jpg'),
+                        fit: BoxFit.cover)),
+              ),
+              ListTile(
+                title: Text('A1A Car Wash App'),
+                onTap: () {
+                  Navigator.pushNamed(context, '/second');
+                },
+              ),
+              ListTile(
+                title: Text('Item 2'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
               ),
             ],
           ),
