@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:madmax2/components/appBar.dart';
+import 'package:madmax2/components/commonDrawer.dart';
 
 void main() {
   runApp(
@@ -12,10 +12,10 @@ class CarWashApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple[800],
-      appBar: CommonAppBar(
-        title: Text('New'),
-        appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('CarWashApp'),
       ),
+      drawer: CommonDrawer(),
       body: Center(
         child: Column(
           children: <Widget>[

@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:madmax2/components/commonDrawer.dart';
 import './pages/carwash.dart';
-import './components/appBar.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -31,6 +31,7 @@ class Myapp extends StatelessWidget {
             ),
           ),
         ),
+        drawer: CommonDrawer(),
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -40,8 +41,8 @@ class Myapp extends StatelessWidget {
               ),
               CircleAvatar(
                 radius: 75.0,
-                backgroundImage: NetworkImage(
-                    'https://pbs.twimg.com/profile_images/1383023790213447680/NpwwDrz0_400x400.jpg'),
+                backgroundImage:
+                    AssetImage('../images/PXL_20210423_080518379.PORTRAIT.jpg'),
               ),
               Text(
                 'Legal Dexter',
@@ -101,44 +102,6 @@ class Myapp extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ),
-        drawer: Drawer(
-          // Add a ListView to the drawer. This ensures the user can scroll
-          // through the options in the drawer if there isn't enough vertical
-          // space to fit everything.
-          child: ListView(
-            // Important: Remove any padding from the ListView.
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                child: Text(
-                  'Drawer Header',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    image: DecorationImage(
-                        image: NetworkImage(
-                            'https://www.psdvault.com/img/2018/02/mad-max-text-flatten.jpg'),
-                        fit: BoxFit.cover)),
-              ),
-              ListTile(
-                title: Text('A1A Car Wash App'),
-                onTap: () {
-                  Navigator.pushNamed(context, '/second');
-                },
-              ),
-              ListTile(
-                title: Text('Home'),
-                onTap: () {
-                  Navigator.pushNamed(context, '/');
-                },
               ),
             ],
           ),
