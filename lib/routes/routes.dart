@@ -4,5 +4,5 @@ import '../pages/carwash.dart';
 
 var customRoutes = <String, WidgetBuilder>{
   '/': (context) => Myapp(),
-  '/second': (context) => CarWashApp(),
+  '/second': (context) => CarWashPage(),
 };

@@ -6,10 +6,10 @@ import './pages/carwash.dart';
 
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/',
+    initialRoute: '/second',
     routes: {
       '/': (context) => Myapp(),
-      '/second': (context) => CarWashApp(),
+      '/second': (context) => CarWashPage(),
       // '/third': (context) => ThirdRoute(),
     },
   ));

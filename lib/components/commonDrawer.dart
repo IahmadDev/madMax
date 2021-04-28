@@ -32,7 +32,7 @@ class CommonDrawer extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => CarWashApp(),
+                  builder: (context) => CarWashPage(),
                 ),
               );
             },
