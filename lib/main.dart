@@ -1,8 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:madmax2/components/commonDrawer.dart';
-import './pages/carwash.dart';
+import './pages/mediaControlsCustom.dart';
 
 void main() {
   runApp(MaterialApp(

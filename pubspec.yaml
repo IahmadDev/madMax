@@ -1,10 +1,10 @@
 name: madmax2
 description: A new Flutter project.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+#publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=34.7.0 <2.0.0"
 
 dependencies:
   flutter:
@@ -27,7 +27,7 @@ flutter:
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
+  #       - asset: fonts/Slack-Lato.ttf
   #         weight: 700
   #
   # For details regarding fonts from package dependencies,
