@@ -1,4 +1,4 @@
-package com.example.madmax2
+package com.example.madMax
 
 import io.flutter.embedding.android.FlutterActivity
 
